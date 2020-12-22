@@ -88,12 +88,15 @@ func (m *Martini) RunOnAddr(addr string) {
 
 // Run the http server. Listening on os.GetEnv("PORT") or 3000 by default.
 func (m *Martini) Run() {
-	port := os.Getenv("PORT")
-	if len(port) == 0 {
-		port = "3000"
-	}
+	port := "8000"
+	host := "127.0.0.1"
+	
+// 	port := os.Getenv("PORT")
+// 	if len(port) == 0 {
+// 		port = "8000"
+// 	}
 
-	host := os.Getenv("HOST")
+// 	host := os.Getenv("HOST")
 
 	m.RunOnAddr(host + ":" + port)
 }
